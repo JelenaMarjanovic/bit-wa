@@ -3,7 +3,7 @@ import './App.css';
 import Header from './partials/Header';
 import Main from './partials/Main';
 import Footer from './partials/Footer';
-import axios from 'axios';
+import {userService} from '../services/UserServices'
 
 class App extends Component {
   constructor(props){
@@ -14,11 +14,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://randomuser.me/api/?results=15')
-    .then((result) => {
-      const users = result.data.results;
-      this.setState({usersData:users})
-    })
+      userService.getUsers().then((result) => {
+      this.setState({usersData:result})
+    });
+    
+    
   }
 
   render() {
