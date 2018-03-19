@@ -3,11 +3,11 @@ import UsersList from '../users/UsersList';
 import PropTypes from 'prop-types';
 
 const Main = (props) => {
-    const { data } = props;    
+    const { data, cardType } = props;
     return (
         <div className="container">
             <div className="row">
-                <UsersList users={data} />
+                <UsersList users={data} cardType={cardType} />
             </div>
         </div>
     )
