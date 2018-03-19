@@ -1,5 +1,5 @@
 import React from 'react';
-import UsersList from './UsersList';
+import UsersList from '../users/UsersList';
 
 const Main = (props) => {
     const { data } = props;

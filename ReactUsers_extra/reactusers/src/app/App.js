@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './Header';
-import Main from './Main';
-import Footer from './Footer';
-import usersData from './users.js';
+import Header from './partials/Header';
+import Main from './partials/Main';
+import Footer from './partials/Footer';
+import usersData from '../data/users.js';
 
 class App extends Component {
 
