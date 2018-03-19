@@ -1,12 +1,11 @@
 import React from 'react';
-import User from '../../entities/User';
 import UserItem from './UserItem';
+import {userService} from '../../services/UserServices';
 
 const UsersList = (props) => {
     const { users } = props;
 
-    const listOfUsers = users.map(user => new User(user.picture, user.name, user.email, user.dob));
-
+    const listOfUsers = userService.getUsers(users);
     const userItems = listOfUsers.map((user, index) => <UserItem key={index} singleUser={user} />);
 
     return (

@@ -1,9 +1,9 @@
 import React from 'react';
 import UsersList from '../users/UsersList';
+import PropTypes from 'prop-types';
 
 const Main = (props) => {
-    const { data } = props;
-
+    const { data } = props;    
     return (
         <div className="container">
             <div className="row">
@@ -11,6 +11,10 @@ const Main = (props) => {
             </div>
         </div>
     )
+}
+
+Main.propTypes = {
+    data: PropTypes.array.isRequired
 }
 
 export default Main;

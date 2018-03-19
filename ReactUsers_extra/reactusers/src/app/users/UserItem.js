@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const UserItem = (props) => {
     const { singleUser } = props;
@@ -20,6 +21,14 @@ const UserItem = (props) => {
         </div>
 
     )
+}
+
+UserItem.propTypes = {
+    singleUser: PropTypes.object.isRequired
+}
+
+UserItem.defaultProps = {
+    singleUser: {}
 }
 
 export default UserItem;
