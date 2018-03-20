@@ -24,10 +24,16 @@ class App extends Component {
     });
   }
 
+  fetchNewUsers = () => {
+    userService.getUsers().then((result) => {
+      this.setState({ usersData: result })
+    });
+  }
+
   render() {
     return (
       <div>
-        <Header func={this.changeState} cardType={this.state.viewType} />
+        <Header changeState={this.changeState} fetchNewUsers={this.fetchNewUsers} cardType={this.state.viewType} />
         <Main data={this.state.usersData} cardType={this.state.viewType} />
         <Footer />
       </div>
