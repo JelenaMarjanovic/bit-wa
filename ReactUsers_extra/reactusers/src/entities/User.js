@@ -15,16 +15,20 @@ class User {
         return this.picture.getLarge();
     }
 
-    getName() {
+    getFullName() {
+        return this.name.getFullName();
+    }
+
+    getFirstName() {
         return this.name.getFirstName();
     }
 
     getEmail() {
-        return `email: ${this.email.hideEmail()}`;
+        return `${this.email.hideEmail()}`;
     }
 
     getDob() {
-        return `date of birth: ${this.dob.formatDate()}`;
+        return `${this.dob.formatDate()}`;
     }
 }
 

@@ -8,14 +8,14 @@ const UserCard = (props) => {
         <div className="col s12 m7 xl4">
             <div className="card">
                 <div className="card-image">
-                    <img src={singleUser.getPicture()} alt={singleUser.getName()} />
+                    <img src={singleUser.getPicture()} alt={singleUser.getFirstName()} />
                     <span className="card-title">
-                        {singleUser.getName()}
+                        {singleUser.getFirstName()}
                     </span>
                 </div>
                 <div className="card-content">
-                    <p>{singleUser.getDob()}</p>
                     <p>{singleUser.getEmail()}</p>
+                    <p>Birth date: {singleUser.getDob()}</p>
                 </div>
             </div>
         </div>

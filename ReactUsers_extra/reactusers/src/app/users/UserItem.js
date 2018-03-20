@@ -5,11 +5,11 @@ const UserItem = (props) => {
 
     return (
         <li className="collection-item avatar">
-            <img className="circle" src={singleUser.getPicture()} alt={singleUser.getName()} />
+            <img className="circle" src={singleUser.getPicture()} alt={singleUser.getFirstName()} />
             <div>
-                <p>{singleUser.getName()}</p>
-                <p>{singleUser.getDob()}</p>
-                <p>{singleUser.getEmail()}</p>
+                <p>{singleUser.getFullName()}</p>
+                <p> <i className="tiny material-icons">email</i> email: {singleUser.getEmail()}</p>
+                <p> <i className="tiny material-icons">cake</i> {singleUser.getDob()}</p>
             </div>
         </li>
     )

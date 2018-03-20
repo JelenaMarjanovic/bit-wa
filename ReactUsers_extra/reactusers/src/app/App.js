@@ -27,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header func={this.changeState} />
+        <Header func={this.changeState} cardType={this.state.viewType} />
         <Main data={this.state.usersData} cardType={this.state.viewType} />
         <Footer />
       </div>
