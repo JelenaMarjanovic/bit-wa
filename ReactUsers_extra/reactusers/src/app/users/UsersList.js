@@ -3,8 +3,8 @@ import UserCard from './UserCard';
 import UserItem from './UserItem';
 
 const UsersList = (props) => {
-    const { users, cardType } = props;
-
+    let { users, cardType } = props;
+    // cardType = localStorage.getItem("state");
     const userCards = users.map((user, index) => <UserCard key={index} singleUser={user} />);
     const userItems = users.map((user, index) => <UserItem key={index} singleUser={user} />);
 

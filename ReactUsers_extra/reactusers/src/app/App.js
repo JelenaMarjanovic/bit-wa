@@ -10,18 +10,23 @@ class App extends Component {
     super(props)
     this.state = {
       usersData: [],
-      viewType: 0
+      viewType: JSON.parse(localStorage.getItem("state"))
+
     }
+    localStorage.setItem("state", this.state.viewType)
   }
 
-  changeState = () => {
-    this.setState({ viewType: (this.state.viewType) ? 0 : 1 })
+  changeView = () => {
+    this.setState({ viewType: !this.state.viewType });
+    localStorage.setItem("state", !this.state.viewType);
+
   }
 
   componentDidMount() {
     userService.getUsers().then((result) => {
       this.setState({ usersData: result })
     });
+    this.setState({ viewType: JSON.parse(localStorage.getItem("state")) });
   }
 
   fetchNewUsers = () => {
@@ -33,7 +38,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header changeState={this.changeState} fetchNewUsers={this.fetchNewUsers} cardType={this.state.viewType} />
+        <Header changeView={this.changeView} fetchNewUsers={this.fetchNewUsers} cardType={this.state.viewType} />
         <Main data={this.state.usersData} cardType={this.state.viewType} />
         <Footer />
       </div>
