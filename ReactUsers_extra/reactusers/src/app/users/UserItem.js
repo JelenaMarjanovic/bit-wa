@@ -3,8 +3,10 @@ import React from 'react';
 const UserItem = (props) => {
     const { singleUser } = props;
 
+    const genderClass = singleUser.getGender();
+
     return (
-        <li className="collection-item avatar">
+        <li className={`collection-item avatar ${genderClass}`}>
             <img className="circle" src={singleUser.getPicture()} alt={singleUser.getFirstName()} />
             <div>
                 <p>{singleUser.getFullName()}</p>

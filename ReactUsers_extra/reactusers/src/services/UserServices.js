@@ -8,7 +8,7 @@ class UserService {
                 return result.data.results;
             })
             .then((result) => {
-                return result.map(user => new User(user.picture, user.name, user.email, user.dob));
+                return result.map(user => new User(user.picture, user.name, user.email, user.dob, user.gender));
             })
     }
 }
