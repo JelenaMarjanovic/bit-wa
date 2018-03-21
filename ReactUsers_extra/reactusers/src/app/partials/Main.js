@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 import Search from './Search';
 
 const Main = (props) => {
-    const { data, cardType, changeValue } = props;
+    const { data, cardType, changeValue, loading } = props;
 
     return (
         <div className="container">
             <div className="row">
-                <Search changeValue={changeValue} />
-                <UsersList users={data} cardType={cardType} />
+                {loading ? <div /> : <Search changeValue={changeValue} />}
+                <UsersList users={data} cardType={cardType} loading={loading} />
             </div>
         </div>
     )

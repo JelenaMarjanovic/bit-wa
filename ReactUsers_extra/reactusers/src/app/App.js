@@ -5,6 +5,7 @@ import Main from './partials/Main';
 import Footer from './partials/Footer';
 import { userService } from '../services/UserServices';
 
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -12,7 +13,8 @@ class App extends Component {
     this.state = {
       usersData: [],
       viewType: JSON.parse(localStorage.getItem("state")),
-      searchValue: ""
+      searchValue: "",
+      loading: true
     }
 
     localStorage.setItem("state", this.state.viewType);
@@ -27,6 +29,7 @@ class App extends Component {
   componentDidMount() {
     userService.getUsers().then((result) => {
       this.setState({ usersData: result })
+      this.setState({ loading: false })
     });
 
     this.setState({ viewType: JSON.parse(localStorage.getItem("state")) });
@@ -54,7 +57,7 @@ class App extends Component {
     return (
       <div>
         <Header changeView={this.changeView} fetchNewUsers={this.fetchNewUsers} cardType={this.state.viewType} />
-        <Main data={this.getUsers()} cardType={this.state.viewType} changeValue={this.onSearchValueChange} />
+        <Main data={this.getUsers()} cardType={this.state.viewType} changeValue={this.onSearchValueChange} loading={this.state.loading} />
         <Footer />
       </div>
     );
