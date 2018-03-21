@@ -59,7 +59,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header changeView={this.changeView} fetchNewUsers={this.fetchNewUsers} cardType={this.state.viewType} />
+        <Header changeView={this.changeView} fetchNewUsers={this.fetchNewUsers} cardType={this.state.viewType} showIcons={true}/>
         <Main data={this.getUsers()} cardType={this.state.viewType} changeValue={this.onSearchValueChange} loading={this.state.loading} />
         <Footer />
       </div>
