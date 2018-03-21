@@ -28,16 +28,19 @@ class App extends Component {
 
   componentDidMount() {
     userService.getUsers().then((result) => {
-      this.setState({ usersData: result })
-      this.setState({ loading: false })
+      this.setState({ usersData: result });
+      this.setState({ loading: false });
     });
 
     this.setState({ viewType: JSON.parse(localStorage.getItem("state")) });
   }
 
   fetchNewUsers = () => {
+    this.setState({ loading: true });
+    
     userService.getUsers().then((result) => {
-      this.setState({ usersData: result })
+      this.setState({ usersData: result });
+      this.setState({ loading: false });
     });
   }
 
