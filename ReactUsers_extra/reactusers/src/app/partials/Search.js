@@ -3,11 +3,10 @@ import './Search.css';
 
 class Search extends React.Component {
     constructor(props) {
-        super();
-    }
-
-    state = {
-        value: ""
+        super()
+        this.state = {
+            value: ""
+        }
     }
 
     handleChange = (event) => {
@@ -24,15 +23,19 @@ class Search extends React.Component {
 
     render() {
         return (
-            <div>
+           
                 <form>
                     <div className="input-field">
-                        <input id="search" type="search" value={this.state.value} onChange={this.handleChange} placeholder="Search users" required />
+                        <input id="search" type="search"
+                            value={this.state.value}
+                            onChange={this.handleChange}
+                            placeholder="Search users"
+                            required />
                         <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
                         <i className="material-icons" onClick={this.resetChange}>close</i>
                     </div>
                 </form>
-            </div>
+          
         )
     }
 }

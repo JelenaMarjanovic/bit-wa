@@ -36,7 +36,7 @@ class App extends Component {
   }
 
   fetchNewUsers = () => {
-    this.setState({ loading: true });
+    this.setState({ loading: true, searchValue:"" });
     
     userService.getUsers().then((result) => {
       this.setState({ usersData: result });

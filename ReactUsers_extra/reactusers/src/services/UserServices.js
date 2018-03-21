@@ -3,7 +3,7 @@ import axios from 'axios';
 
 class UserService {
     getUsers() {
-        return axios.get('https://randomuser.me/api/?results=15')
+        return axios.get('https://randomuser.me/api/?results=45')
             .then((result) => {
                 return result.data.results;
             })
