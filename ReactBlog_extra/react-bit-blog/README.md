@@ -1,3 +1,4 @@
+<pre>
 src
   /app
     /about
@@ -37,3 +38,4 @@ src
   Main.js
 index.js
 registerServiceWorker.js
+</pre>
