@@ -1,9 +1,9 @@
 class Post {
-    constructor(post) {
-        this.authorId = post.userId;
-        this.id = post.id;
-        this.title = post.title;
-        this.content = post.body;
+    constructor({ userId, id, title, body }) {
+        this.authorId = userId;
+        this.id = id;
+        this.title = title;
+        this.content = body;
     }
 }
 
