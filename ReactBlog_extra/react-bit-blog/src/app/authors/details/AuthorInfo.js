@@ -16,6 +16,6 @@ const AuthorInfo = () => (
             </div>
         </div>
     </div>
-)
+);
 
 export { AuthorInfo };
