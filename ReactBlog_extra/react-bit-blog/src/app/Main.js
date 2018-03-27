@@ -12,8 +12,8 @@ const Main = () => (
         <Switch>
             <Route exact path="/" component={PostsPage} />
             <Route exact path="/authors" component={AuthorsPage} />
-            <Route path="/authors/:id" component={AuthorDetailsPage} />
-            <Route path="/posts/:id" component={PostDetailsPage} />
+            <Route path="/authors/:authorId" component={AuthorDetailsPage} />
+            <Route path="/posts/:postId" component={PostDetailsPage} />
             <Route exact path="/about" component={AboutPage} />
         </Switch>
     </main>

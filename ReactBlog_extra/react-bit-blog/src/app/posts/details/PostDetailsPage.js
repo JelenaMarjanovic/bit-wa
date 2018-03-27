@@ -3,9 +3,43 @@ import { Link } from 'react-router-dom';
 
 import { PostAuthor } from './PostAuthor';
 import { PostsFromAuthor } from './PostsFromAuthor';
+import { postService } from './../../../services/PostService';
 
 class PostDetailsPage extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            post: null
+        };
+    }
+
+    loadPost(props) {
+        const { match: { params } } = props;
+        const postId = params.postId;
+
+        postService.fetchPostDetails(postId)
+            .then(post => {
+                this.setState({ post });
+            });
+    }
+
+    componentDidMount() {
+        this.loadPost(this.props);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.loadPost(nextProps);
+    }
+
     render() {
+        if (!this.state.post) {
+            return <h2 className="blue-text text-darken-4 center">Nothing to display!</h2>
+        }
+
+        const { title, content, authorId } = this.state.post;
+
         return (
             <div className="blue-text text-darken-4">
                 <Link to="/">
@@ -14,13 +48,11 @@ class PostDetailsPage extends Component {
                     </button>
                 </Link>
                 <div className="card-panel">
-                    <h3 className="center">Post title</h3>
-                    <PostAuthor />
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sequi, officia earum possimus ea, minima sunt eum reiciendis modi, iste repellendus necessitatibus expedita quis porro. Porro facere omnis esse voluptatibus!
-                    Enim possimus, reprehenderit tempora repudiandae nemo ipsum dicta ullam quod tempore rem perferendis deleniti illo maxime officia modi exercitationem nisi unde. Aspernatur cum enim a quae architecto nisi dolorum voluptatibus.
-                    Ipsa perspiciatis maxime dolorum aut quaerat eveniet culpa, soluta obcaecati quidem aspernatur consequuntur eaque cupiditate deleniti quis ratione magni. Eveniet officia commodi voluptatibus dolore facilis possimus earum, quisquam exercitationem voluptas.</p>
+                    <h3 className="center">{title}</h3>
+                    <PostAuthor authorId={authorId} />
+                    <p>{content}</p>
                     <hr />
-                    <PostsFromAuthor />
+                    <PostsFromAuthor authorId={authorId} />
                 </div>
             </div>
         );

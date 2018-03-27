@@ -5,7 +5,7 @@ class Address {
         this.street = street;
         this.city = city;
         this.zipcode = zipcode;
-        this.geoLocation = new Geolocation(geo);
+        this.geoLocation = new GeoLocation(geo);
     }
 }
 
