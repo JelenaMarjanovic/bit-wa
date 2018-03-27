@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import {authorService} from './../../../services/AuthorService';
+import { authorService } from './../../../services/AuthorService';
 
 class PostAuthor extends Component {
     constructor(props) {
@@ -18,7 +18,6 @@ class PostAuthor extends Component {
         authorService.fetchAuthorName(authorId)
             .then(author => {
                 this.setState({ author });
-                console.log(author);
             })
     }
 
