@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-import { BASE_API_ENDPOINT } from './../shared/constants';
+import { constants } from './../shared/constants';
 import { Author } from './../models/Author';
 
 class AuthorService {
     fetchAuthors() {
-        const requestUrl = `${BASE_API_ENDPOINT}/users`;
+        const requestUrl = `${constants.BASE_API_ENDPOINT}/users`;
 
         return axios.get(requestUrl)
             .then(({ data }) => {
@@ -15,8 +15,8 @@ class AuthorService {
             });
     }
 
-    fetchAuthorName(authorId) {
-        const requestUrl = `${BASE_API_ENDPOINT}/users/${authorId}`;
+    fetchAuthorDetails(authorId) {
+        const requestUrl = `${constants.BASE_API_ENDPOINT}/users/${authorId}`;
 
         return axios.get(requestUrl)
             .then(({ data }) => {

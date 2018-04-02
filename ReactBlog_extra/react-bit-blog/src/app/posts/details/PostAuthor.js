@@ -15,7 +15,7 @@ class PostAuthor extends Component {
     componentDidMount() {
         const { authorId } = this.props;
 
-        authorService.fetchAuthorName(authorId)
+        authorService.fetchAuthorDetails(authorId)
             .then(author => {
                 this.setState({ author });
             })
