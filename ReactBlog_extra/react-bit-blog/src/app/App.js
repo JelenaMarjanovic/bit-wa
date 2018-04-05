@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 
-import { Header } from './partials/Header';
+import { Header } from './common/Header';
 import { Main } from './Main';
-import { Footer } from './partials/Footer';
+import { Footer } from './common/Footer';
 
 import './App.css';
 

@@ -1,6 +1,7 @@
-class Constants {
-    BASE_API_ENDPOINT = 'https://jsonplaceholder.typicode.com';
-    // GOOGLE_MAPS_API_KEY = '';
-}
+export const BASE_API_ENDPOINT = 'https://jsonplaceholder.typicode.com';
 
-export const constants = new Constants();
+export const NAV_PATHS = [
+    { path: '', title: 'Home' },
+    { path: 'authors', title: 'Authors' },
+    { path: 'about', title: 'About' }
+];
