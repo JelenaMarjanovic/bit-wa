@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { MainMenu } from './MainMenu';
+import MainMenu from './MainMenu';
 
 const Header = () => (
     <header className="navbar-fixed">
