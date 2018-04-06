@@ -56,10 +56,10 @@ class CreatePost extends Component {
                     </div>
 
                     <Link to="/" className="left blue darken-1 blue-text text-darken-4 btn-large" >
-                        <i className="material-icons left">cancel</i> Cancel
+                        <i className="material-icons left">clear</i> Cancel
                     </Link>
                     <Link to="/" className="right blue darken-4 btn-large" onClick={this.createNewPost}>
-                        <i className="material-icons right">save</i> Save
+                        <i className="material-icons right">check</i> <span>Save</span>
                     </Link>
                 </form>
             </div>
