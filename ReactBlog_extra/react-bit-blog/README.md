@@ -2,40 +2,41 @@
 src
   /app
     /about
-      AboutPage.js
+      AboutPage
     /authors
       /details
-          AuthorAddress.js
-          AuthorCompany.js
-        AuthorDetailsPage.js
-          AuthorInfo.js
-      AuthorItem.js
-      AuthorsList.js
-      AuthorsPage.js
-    /partials
-      Header.js
-      Footer.js
+          AuthorAddress
+          AuthorCompany
+        AuthorDetailsPage
+          AuthorInfo
+      AuthorItem
+      AuthorsList
+      AuthorsPage
+    /common
+      Header
+      Footer
+        MainMenu
     /posts
       /details
-          PostAuthor.js
-        PostDetailsPage.js
-          PostsFromAuthor.js
-      PostItem.js
-      PostsList.js
-      PostsPage.js
+          PostAuthor
+        PostDetailsPage
+          PostsFromAuthor
+      CreatePost
+      PostItem
+      PostsList
+      PostsPage
   /models
-      Address.js
-    Author.js
-      Company.js
-      GeoLocation.js
-    Post.js
+      Address
+    Author
+      Compan
+      GeoLocation
+    Post
   /services
-    AuthorService.js
-    PostService.js
+    AuthorService
+    PostService
   /shared
-    constants.js
-  App.js
-  Main.js
-index.js
-registerServiceWorker.js
+    constants
+  App
+  Main
+index
 </pre>
