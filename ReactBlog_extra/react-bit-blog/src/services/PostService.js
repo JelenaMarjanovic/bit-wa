@@ -41,7 +41,24 @@ class PostService {
             });
     }
 
-    // deliverNewPost()
+    deliverNewPost(title, body) {
+        const requestUrl = `${BASE_API_ENDPOINT}/posts`;
+
+        const options = {
+            method: 'POST',
+            body: {
+              title: title,
+              body: body,
+              userId: 1
+            },
+            headers: {
+              "Content-type": "application/json; charset=UTF-8"
+            }
+        }
+
+        return axios.post(requestUrl, options)
+            .then(({ data }) => console.log(data));
+    }
 }
 
 export const postService = new PostService();

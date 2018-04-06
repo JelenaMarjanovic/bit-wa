@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { NAV_PATHS } from './../../shared/constants';
 
@@ -27,7 +27,7 @@ class MainMenu extends Component {
                 }
             </ul>
 
-            <ul className="sidenav" id="mobile-demo">
+            <ul className="sidenav sidenav-close" id="mobile-demo">
                 {
                     NAV_PATHS
                         .map(({ path, title }, i) =>
@@ -41,4 +41,4 @@ class MainMenu extends Component {
     };
 }
 
-export default withRouter(MainMenu);
+export { MainMenu };

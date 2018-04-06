@@ -34,3 +34,22 @@
 .sidenav-overlay {
   z-index: 0 !important;
 }
+
+input {
+  color: #0D47A1 !important;
+}
+
+label {
+  color: #0D47A1 !important;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #0D47A1 !important;
+  box-shadow: 0 1px 0 0 #0D47A1 !important;
+}
+
+textarea {
+  color: #0D47A1;
+  border-bottom: 1px solid #0D47A1 !important;
+}

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 import { AuthorInfo } from './AuthorInfo';
@@ -41,7 +41,7 @@ class AuthorDetailsPage extends Component {
         const { address, company } = this.state.author;
 
         return (
-            <div>
+            <Fragment>
                 <Link to="/authors">
                     <button className="btn blue darken-4">
                         <i className="material-icons">keyboard_backspace</i>
@@ -50,7 +50,7 @@ class AuthorDetailsPage extends Component {
                 <AuthorInfo authorInfo={this.state.author} />
                 <AuthorAddress authorAddress={address} />
                 <AuthorCompany authorCompany={company} />
-            </div>
+            </Fragment>
         );
     }
 }
