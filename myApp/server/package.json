@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lorem-ipsum": "^1.0.4"
+    "lorem-ipsum": "^1.0.4",
+    "npm": "^6.4.1"
   },
   "devDependencies": {
     "nodemon": "^1.17.2"
