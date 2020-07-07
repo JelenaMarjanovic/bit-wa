@@ -8,7 +8,7 @@
     "fibers": "^4.0.2",
     "materialize-css": "^1.0.0",
     "node-sass": "^4.13.0",
-    "npm": "^6.13.4",
+    "npm": "^6.14.6",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
